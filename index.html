@@ -1,0 +1,126 @@
+<html>
+    <head>
+        <title>Kids Form</title>
+    </head>
+    <body>
+        <center>
+            <img src="https://i.pinimg.com/736x/eb/7a/ec/eb7aecdec589c161bec65c7e30c7fea3.jpg">
+            <br>
+            <br>
+            <h1>Guru Kripa Family</h1>
+            <h2>Kids Form</h2>
+
+        </center>
+        <style>
+            h1{
+                font-weight: bold;
+                font-size: 100px;
+                font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            }
+            h2{
+                font-size: 50px;
+                font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            }
+            body{
+                
+                justify-content: center;
+                align-items: center;
+                min-height: 100vh;
+            }
+            .calendar{
+                position:relative;
+                width: 200px;
+                text-align: center;
+                background:wheat;
+                border-radius: 8px;
+                overflow: hidden;
+                font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+                
+            }
+            .calendar #monthName{
+                position: relative;
+                padding: 5px 10px;
+                background:rgb(63, 53, 192);
+                color: white;
+                font-size: 30px;
+                font-weight: 700;
+            }
+            .calendar #dayName{
+                margin-top: 20px;
+                line-height: 1em;
+                font-size: 30px;
+                font-weight: 300;
+            }
+            .calendar #dayNumber{
+                font-size: 30px;
+            }
+            .calendar #year{
+                margin-bottom: 20px;
+                font-size: 20px;
+                font-weight: 200;
+
+            }
+            select{
+                width: 400px;
+                height:60px;
+                font-size: 50px;
+                font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            }
+            input{
+                font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+                width: 300px;
+                height: 60px;
+                font-size: 40px;
+            }
+            
+        </style>
+        <center>
+            <div class="calendar">
+                <p id="monthName"></p>
+                <p id="dayName"></p>
+                <p id="dayNumber"></p>
+                <p id="year"></p>
+            </div>
+            <br>
+            <br>
+            <br>
+            <select name="Name">
+                <option value="veer">Veer</option>
+                <option value="sabar">Sabar</option>
+                <option value="avika">Avika</option>
+                <option value="ayaan">Ayaan</option>
+                <option value="abeer">Abeer</option>
+                <option value="naman">Naman</option>
+            </select>
+            <br>
+            <br>
+            <input type="text" placeholder="Sewa">
+            <br>
+            <br>
+            <input type="text" placeholder="Hasti Duniya">
+            <br>
+            <br>
+            <input type="text" placeholder="Share">
+            <br>
+            <br>
+            <input type="text" placeholder="Lie">
+        </center>
+       
+        <script> 
+            const lang = navigator.language;
+            let date = new Date();
+
+            let dayNumber = date .getDate();
+            let month = date.getMonth();
+            let dayName = date.toLocaleString(lang,{weekday: 'long'})
+            let monthName = date.toLocaleString(lang,{month: 'long'})
+            let year = date.getFullYear()
+
+            document.getElementById("monthName").innerHTML = monthName;
+            document.getElementById("dayName").innerHTML = dayName;
+            document.getElementById("dayNumber").innerHTML =dayNumber;
+            document.getElementById("year").innerHTML = year;
+
+        </script>
+    </body>
+</html>
